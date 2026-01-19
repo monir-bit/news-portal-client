@@ -1,0 +1,71 @@
+RewriteOptions inherit
+RewriteEngine On
+Options +FollowSymLinks
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Allow bangla-admin to pass through - check if it's a request to bangla-admin
+    RewriteCond %{REQUEST_URI} ^/bangla-admin/ [NC]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^bangla-admin/(.*)$ /bangla-admin/public/index.php [L,QSA]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+<IfModule mod_php.c>
+    php_value max_execution_time 300
+</IfModule>
+
+<IfModule mod_reqtimeout.c>
+    RequestReadTimeout header=20-40,MinRate=500 body=20,MinRate=500
+</IfModule>
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, see our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php8_module>
+   php_flag display_errors Off
+   php_value max_execution_time 300
+   php_value max_input_time 39
+   php_value max_input_vars 1000
+   php_value memory_limit 2048M
+   php_value post_max_size 128M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/webuzo-data/php/sessions/php81"
+   php_value session.cookie_lifetime 600
+   php_value upload_max_filesize 122M
+   php_flag zlib.output_compression Off
+   php_value date.timezone "UTC"
+</IfModule>
+<IfModule lsapi_module>
+   php_flag display_errors Off
+   php_value max_execution_time 300
+   php_value max_input_time 39
+   php_value max_input_vars 1000
+   php_value memory_limit 2048M
+   php_value post_max_size 128M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/webuzo-data/php/sessions/php81"
+   php_value session.cookie_lifetime 600
+   php_value upload_max_filesize 122M
+   php_flag zlib.output_compression Off
+   php_value date.timezone "UTC"
+</IfModule>
+# END cPanel-generated php ini directives, do not edit

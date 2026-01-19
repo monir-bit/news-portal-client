@@ -1,0 +1,4 @@
+ <-- <p class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>${site.localeDate(data[i].date)}</p>-->
+<i class="fas fa-clock" style="margin-right: 5px"></i>${site.localeDate(time)}
+<p class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>${site.localeDate(data[i].time)}</p>
+ <p class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</p>
