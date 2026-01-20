@@ -1,55 +1,117 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Construction</title>
 
-use Illuminate\Contracts\Http\Kernel;
-use Illuminate\Http\Request;
+    <style>
+        :root {
+            --primary: #0F9D58;
+            --primary-dark: #0B8043;
+            --bg: #F9FAFB;
+            --text-dark: #1F2937;
+            --text-muted: #6B7280;
+        }
 
-define('LARAVEL_START', microtime(true));
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        }
 
-/*
-|--------------------------------------------------------------------------
-| Check If The Application Is Under Maintenance
-|--------------------------------------------------------------------------
-|
-| If the application is in maintenance / demo mode via the "down" command
-| we will load this file so that any pre-rendered content can be shown
-| instead of starting the framework, which could cause an exception.
-|
-*/
+        body {
+            background: linear-gradient(135deg, var(--bg), #ffffff);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dark);
+        }
 
-if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
-    require $maintenance;
-}
+        .container {
+            text-align: center;
+            max-width: 520px;
+            padding: 40px;
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
 
-/*
-|--------------------------------------------------------------------------
-| Register The Auto Loader
-|--------------------------------------------------------------------------
-|
-| Composer provides a convenient, automatically generated class loader for
-| this application. We just need to utilize it! We'll simply require it
-| into the script here so we don't need to manually load our classes.
-|
-*/
+        .icon {
+            font-size: 64px;
+            margin-bottom: 15px;
+        }
 
-require __DIR__.'/../vendor/autoload.php';
+        h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
 
-/*
-|--------------------------------------------------------------------------
-| Run The Application
-|--------------------------------------------------------------------------
-|
-| Once we have the application, we can handle the incoming request using
-| the application's HTTP kernel. Then, we will send the response back
-| to this client's browser, allowing them to enjoy our application.
-|
-*/
+        p {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
 
-$app = require_once __DIR__.'/../bootstrap/app.php';
+        .progress {
+            width: 100%;
+            height: 10px;
+            background: #E5E7EB;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
 
-$kernel = $app->make(Kernel::class);
+        .progress-bar {
+            width: 65%;
+            height: 100%;
+            background: linear-gradient(
+                    90deg,
+                    var(--primary),
+                    var(--primary-dark)
+            );
+            border-radius: 20px;
+            animation: progress 2s ease-in-out infinite alternate;
+        }
 
-$response = $kernel->handle(
-    $request = Request::capture()
-)->send();
+        @keyframes progress {
+            from { width: 55%; }
+            to { width: 75%; }
+        }
 
-$kernel->terminate($request, $response);
+        .footer {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .footer span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="icon">🚧</div>
+    <h1>We’re Under Construction</h1>
+    <p>
+        Our website is currently being worked on.<br>
+        We’ll be back very soon with something amazing!
+    </p>
+
+    <div class="progress">
+        <div class="progress-bar"></div>
+    </div>
+
+    <div class="footer">
+        © 2026 <span>Agamir Somoy</span> — All rights reserved
+    </div>
+</div>
+
+</body>
+</html>
