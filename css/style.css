@@ -315,7 +315,7 @@ border: 4px solid #F7E2C7;
     background: #FBFBFB;
 }
 #sideLeadNews.titleNews2 .news {
-   background: #FFFAE0; 
+   background: #FFFFFF;
 }
 #sideLeadNews.titleNews2 .news .image{
     margin-right: 0px;
@@ -359,7 +359,7 @@ border: 4px solid #F7E2C7;
 }
 
 .endNewsItem{
-    height: 530px;
+    height: 450px;
     overflow-y: scroll;
 }
 
@@ -687,5 +687,3 @@ border: 4px solid #F7E2C7;
   font-size: 14px; /* Smaller font size for date */
   color: #666; /* Lighter color for the date */
 }
-
- 

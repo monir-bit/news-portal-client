@@ -5,139 +5,52 @@
 <div class="section-container">
     <div id="firstLead" class="mt-3 row  mb-3 d-flex justify-content-between">
 
-        <div href="#" class="flLead col-12 col-sm-12 col-md-12 col-lg-6">
-            <div id="mainLead" style="overflow: hidden;">
-                <!--MAIN FIRST LEAD NEWS -->
-            </div>
-            <!--<div class="titleNews row border-top" id="bottomMainLead">-->
-               <!--BOTTOM MAIN LEAD -->
-            <!--</div>-->
-        </div>
-        
+
         <div class="flLeft border-right col-12 col-sm-12 col-md-6 col-lg-3" >
             <div class="3news titleNews2" id="sideLeadNews">
                 <!-- LEFT FIRST LEAD NEWS -->
             </div>
             <!--               Advertise   --->
-            <!--<div id="home_lead_left" class="advertise mt-4 mb-3 text-center  overflow-hidden">
+            <div id="home_lead_left" class="advertise mt-4 mb-3 text-center  overflow-hidden">
 
-            </div>-->
+            </div>
         </div>
 
-        <div class="flRight col-12 col-sm-12 col-md-6 col-lg-3 border-motamot" >
-            
-            <!-- ramadan start --->
-                <!--<div class="category-ber shadow-sm border-bottom border-secondary  p-2  d-flex justify-content-between align-items-center" style="position: relative;">
-                    <h4 class="m-0">
-                        <div class="spinner-grow spinner-grow-sm text-danger" role="status">
-                            <span class="visually-hidden">Loading...</span>
-                    </div> ভিডিও সংবাদ</h4>
-                </div>-->
-            <!-- ramadan end ---> 
-            <!--               Advertise   --->
-            <!--<div id="home_lead_right" class="advertise mt-0 mb-1 text-center overflow-hidden">-->
-                <!-- Home Lead Right Add -->
-            <!--</div>-->
-            <div class="motamot">
-            <style>
-  mark {
-    background-color: #F7E2C7; /* Custom highlight color */
-    color: black; /* Text color for contrast */
-    padding: 10px 20px 3px 20px;
-    
-  }
-</style>
-                <h5 class="text-center p-10 mb-5 fw-bold"> <mark>মতামত </mark> </h5>
-                <ul  class="list-group list-group-flush" id="motamotSection">
+        <div href="#" class="flLead col-12 col-sm-12 col-md-12 col-lg-6">
+            <div id="mainLead" style="overflow: hidden;">
+                <!--MAIN FIRST LEAD NEWS -->
+            </div>
+        </div>
+        
 
+
+        <div class="flRight col-12 col-sm-12 col-md-6 col-lg-3" >
+            <div  class="endNews">
+                <!-- Nav pills -->
+                <ul class="nav border-bottom  mb-2  pb-1 pt-1 border-top nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark active f-20" data-bs-toggle="pill" href="#home">সর্বশেষ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a  class="nav-link text-dark f-20" data-bs-toggle="pill" href="#menu1">সর্বাধিক</a>
+                    </li>
                 </ul>
-            </div>
 
-            {{--<div class="corona">
-                <h5 class="text-center p-2 border-top border-bottom mt-1 mb-0 fw-bold">করোনা আপডেট</h5>
-                <div class="coronaTable d-flex">
-                    <div class="coronaTableItem">
-                        <div class="text-center lh-lg">বাংলাদেশ</div>
-                        <table class="table table-sm table-striped table-light">
-                            <tr>
-                                <td>মোট আকান্ত</td>
-                                <td>:</td>
-                                <td id="bnTotal"></td>
-                            </tr>
-                            <tr>
-                                <td>মোট সুস্থ</td>
-                                <td>:</td>
-                                <td id="bnRecover"></td>
-                            </tr>
-                            <tr>
-                                <td>মোট মৃত্যুঃ</td>
-                                <td>:</td>
-                                <td id="bnDeath"></td>
-                            </tr>
-                        </table>
+                <!-- Tab panes -->
+                <div class="tab-content endNewsItem">
+                    <div class="tab-pane p-0 container active" id="home">
+                        <div class="titleNews2" id="SorbosesNews">
+                            <!--- Sorboses News -->
+                        </div>
                     </div>
-                    <div class="coronaTableItem">
-                        <div class="text-center lh-lg">বিশ্ব</div>
-                        <table class="table table-sm table-striped table-light">
-                            <tr>
-                                <td>মোট আকান্ত</td>
-                                <td>:</td>
-                                <td id="inTotal"></td>
-                            </tr>
-                            <tr>
-                                <td>মোট সুস্থ</td>
-                                <td>:</td>
-                                <td id="inRecover"></td>
-                            </tr>
-                            <tr>
-                                <td>মোট মৃত্যুঃ</td>
-                                <td>:</td>
-                                <td id="inDeath"></td>
-                            </tr>
-                        </table>
+                    <div class="tab-pane p-0 container fade" id="menu1">
+                        <div class="titleNews2" id="SorbadikNews">
+                            <!-- Sorbadik News -->
+                        </div>
                     </div>
                 </div>
-                <div class="coronaActionBtn d-flex justify-content-center">
-                    <div class="mt-0">
-                        <button class="cnext btn btn-sm btn-secondary rounded-pill m-1"><i class="fas fa-angle-left"></i></button>
-                        <button class="cprev btn btn-sm btn-secondary rounded-pill m-1"><i class="fas fa-angle-right"></i></button>
-                    </div>
-                </div>
-            </div>--}}
-            <div class="row">
-            <div class="col-12 col-md-12 col-lg-12 col-xl-12">
-   {{--      <div class="bg-light mt-5 border-top border-bottom border-secondary shadow-sm">
-            <div class="bg-light p-2  d-flex justify-content-between align-items-center">
-                <h4 class="m-0">অনলাইন ভোট</h4>
-                <button class="btn btn-danger rounded-pill">সকল</button>
-            </div>
-        </div> --}}
-
-        <div class="row">
-            <div class="col-12 col-sm-12 col-md-6 col-lg-12">
-                <div id="vote-item-container" class="vs-slide-item" >
-                    <!-- Vote Item Area -->
-                </div>
 
             </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-12">
-
-                {{--                Advertise--}}
-                <div id="home_sports_right" class="advertise mt-4 mb-3 text-center d-none">
-
-                </div>
-            </div>
-        </div>
-    </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-12">
-
-                {{--                Advertise--}}
-                <div id="home_sports_right" class="advertise mt-4 mb-3 text-center">
-
-                </div>
-            </div>
-        </div>
-
         </div>
     </div>
 </div>
@@ -154,21 +67,22 @@
     Advertise('/advertise/home_lead_right_add', $('#home_lead_right'))
 
     function HomeFirstLead(){
-        axios.get(site.url('/get-all-news/1/lead_news/7/0')).then(async function(response){
+        axios.get(site.url('/get-all-news/1/lead_news/5/0')).then(async function(response){
             if(response.status === 200){
                 let data = response.data;
-              
-             
 
                 //Side Lead News
-                function siteLeadNews(newsID,image,title,time){
+                function siteLeadNews(newsID,image,title,time, description){
                     $('#sideLeadNews').append(`
-                    <a href="/get-news/${newsID}" class="news  link border-bottom  mb-4">
-                        <div>
-                            <h5 class="title m-0 line-2" style="margin-bottom: 5px!important;">${title}</h5>
-                        </div>
-                        <img class="image" src="${image}">
-                    </a>
+                    <div class="link border-bottom   mb-4">
+                        <a href="/get-news/${newsID}"  class="news first-lead-3news  ">
+                            <img class="image" src="${image}">
+                            <div class="ms-2">
+                                <h5 class="title m-0 line-2" style="margin-bottom: 5px!important;">${title}</h5>
+                            </div>
+                        </a>
+                        <p>${description}</p>
+                    </div>
                 `);
                 }
 
@@ -179,7 +93,7 @@
                         <img class="image" src="${image}">
                         <div>
                             <h5 class="title line-2" style="margin-bottom: 5px!important;">${title}</h5>
-                            
+
 
                         </div>
                     </a>
@@ -189,56 +103,26 @@
                 for(let i = 0;data.length > i;i++){
                     
                     if(data[i].order == 1){
-                        
-                        await GetData('/get-all-live-news/1/0', function (response){
-                            if(response.status === 200){
-                                let data = response.data;
-                                if(data.length > 0){
-                                    $('#sideLeadNews').append(`
-                                        <a href="/get-live-news/${data[0].id}" class="news  p-0 link border-bottom mt-2 mb-2">
-                                            <div class="position-relative">
-                                                <img style="height: 65px;" class="image" src="${data[0].image}">
-                                                <div class="position-absolute text-center text-white " style="height: 20px;width: 90%;background: rgba(255,255,255,1);bottom: 0">
-                    
-                                                    <img src="https://www.pngall.com/wp-content/uploads/2018/03/Live-PNG-File.png" height="20px">
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <h5 class="title line-2" style="margin-bottom: 0px!important;">${data[0].title}</h5>
-                                                <p class="hour"></p>
-                                            </div>
-                                        </a>
-                                    `)}
-                                }
-                            })
-                        
+
+                        let news = data[i];
                         //Main Lead
                         $('#mainLead').append(`
-                            <a id="mainLead" style="display: block;position: relative;" class="link hover-zoom" href="/get-news/${data[i].id}" >
-                              <img class="image img-fluid" style="width: 100%; border: 4px solid #f20000; animation: animated-border 2s infinite;" src="${data[i].image}" alt="Image">
-<style>
-  @keyframes animated-border { 0% { border: 4px solid #f20000; } 50% { border: 4px solid #000000; } 100% { border: 4px solid #f20000; } }
-</style>
-                                <div style="bottom: 0;color: #fff;" class="cardOverlay w-100 position-absolute p-2"><h1 class="mt-2 line-2">${data[i].title}</h1></div>
+                            <a id="mainLead" style="display: block;" class="link href="/get-news/${news.id}" >
+                              <img class="image img-fluid" style="width: 100%;" src="${news.image}" alt="Image">
+                                <h1 class="mt-3">${news.title}</h1>
+                                <p class="line-2">${news.sort_description}</p>
                             </a>
+
                          `);
-                         //<p class="line-2">${data[i].sort_description}</p>
-                    }
-                    
-                    if(data[i].order == "2"){
-                        siteLeadNews(data[i].id,data[i].image,data[i].title, data[i].date)
-                    }else if(data[i].order == "3"){
-                        siteLeadNews(data[i].id,data[i].image,data[i].title, data[i].date)
-                    }else if(data[i].order == "4"){
-                        siteLeadNews(data[i].id,data[i].image,data[i].title, data[i].date)
+
                     }
 
-                    //Bottom Leaed News
-                    else if(data[i].order == "5"){
-                        bottomLeadNews(data[i].id,data[i].image,data[i].title, data[i].date)
-                    }else if(data[i].order == "6"){
-                        bottomLeadNews(data[i].id,data[i].image,data[i].title, data[i].date)
+                    if(data[i].order == "2"){
+                        siteLeadNews(data[i].id,data[i].image,data[i].title, data[i].date, data[i].sort_description)
+                    }else if(data[i].order == "3"){
+                        siteLeadNews(data[i].id,data[i].image,data[i].title, data[i].date, data[i].sort_description)
                     }
+
 
                 }
             }

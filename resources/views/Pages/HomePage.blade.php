@@ -9,20 +9,11 @@
 {{--        @include('Component.AdvertiseModal') --}}
 
 
+        <div class="py-2 d-flex justify-content-center">
+            <img src="https://tpc.googlesyndication.com/simgad/14287566647477718716"/>
+        </div>
+
         @include('Component.FirstLead')
         @include('Component.SecondLead')
-        @include('Component.Politics')
-        @include('Component.National')
-        @include('Component.sports')
-        @include('Component.International')
-        @include('Component.oporad')
-        @include('Component.Entertainment')
-        @include('Component.SampleComonent1')
-        @include('Component.SampleComponent2')
-        @include('Component.SampleComponent3')
-        @include('Component.Video')     
-        @include('Component.ImageGallery')
-        @include('Component.Feature')
-        @include('Component.Marque') 
 {{--        @include('Component.AdvertiseBottomFixed') --}}
 @endsection

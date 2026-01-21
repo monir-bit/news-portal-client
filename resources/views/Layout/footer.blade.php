@@ -1,14 +1,11 @@
 <div id="footer" class="bg-light pt-3 pb-3 mt-3 section-container border-top border-bottom">
 
     <div class="footer-area row align-items-center justify-content-between">
-        <div class="col-12 col-md-12 border-md-bottom text-center mb-2" style="font-size: 24px;font-weight: bold;">
-            {{env("ADDRESS_LINE1")}}
+        <div class="col-12 col-md-12 border-md-bottom text-center mb-2" style="font-size: 20px;font-weight: bold;">
+            {{env("ADDRESS_LINE2")}}, {{env("ADDRESS_LINE1")}}
         </div>
         <br>
-        <div class="col-12 col-md-12 border-md-bottom text-center mb-2" style="font-size: 20px;font-weight: bold;">
-            {{env("ADDRESS_LINE2")}}
-           
-        </div>
+
         <div class="col-12 col-md-12 border-md-bottom text-center mb-2">
             {{env("ADDRESS_LINE3")}}
 

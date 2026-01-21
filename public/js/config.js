@@ -3,7 +3,7 @@ const site = {
     // front_site_url : "https://agamirsomoy.mmonlinemedia.org",
     
    // base_url: "https://bnbd24.net/bangla-admin/public/api",
-    base_url: "https://agamirsadmin.agamirsomoy.com/api",
+    base_url: "https://agamiradmin.agamirsomoy.com/api",
     url: function (getUrl){
         return this.base_url+getUrl;
     },

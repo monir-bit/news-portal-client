@@ -1,33 +1,13 @@
 <div id="top-nav" class="border-top border-bottom shadow-sm" style="background-color:#FFFFFF; color:#00000;">
     <nav class="navbar section-container navbar-light navbar-expand-md  d-none d-md-block">
         <div class="container-fluid">
-            <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
-                <ul id="category" class="navbar-nav">
-                                    
-                </ul>
-            <ul id="" class="navbar-nav">
-                      <li class="nav-item dropdown">
-                                        <a class="nav-link top-menu text-black dropdown-toggle" href="#mege" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-                                            আরও 
-                                        </a>
-                                        <ul id="mege" class="dropdown-menu " style="background-color:#FFFFFF; color:#000000;" data-bs-popper="none">
-                                            
-                                          <?php  $c=\DB::table('categories')->orderBy('order', 'ASC')->get()?>
-                                            @foreach ($c as $v)
-                                              @if($loop->iteration > 10)
-                                            <?php 
-                                                $categorySlug = $v->slug ?? 'category-' . $v->id;
-                                                $categoryUrl = '/' . $categorySlug;
-                                            ?>
-                                            <li><a class="dropdown-item top-menu" href="{{$categoryUrl}}">{{$v->name}}</a></li>
-                                            @endif
-                                            @endforeach  
-                                    
-                                </ul>
-                                    </li>               
-                </ul>
-                
+            <div class="collapse navbar-collapse d-flex justify-content-left" id="navbarSupportedContent">
+                <button data-bs-toggle="offcanvas" href="#sideMenu" role="button" aria-controls="sideMenu" class="fas btn btn-outline-secondary fa-bars"></button>
+                <div class="w-100 d-flex justify-content-center">
+                    <ul id="category" class="navbar-nav">
 
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
@@ -45,9 +25,6 @@
                     if(data[i].order == j+1){
                         if(data[i].id == "1"){
                             nav.append(`
-                                <li class="nav-item">
-                                  <a class="nav-link top-menu text-black" href="/" style="padding: 0.9rem 17px;"><i class="fa fa-home"></i></a>
-                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link top-menu text-black" href="/latest-news">সর্বশেষ</a>
                                 </li>

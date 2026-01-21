@@ -3,48 +3,38 @@
         <div id="siteLead" class="pt-2 pb-2 d-flex justify-content-between align-items-center">
             <div class="siteLeft">
                 <div class="siteAction d-flex">
-                    <button data-bs-toggle="offcanvas" href="#sideMenu" role="button" aria-controls="sideMenu" class="fas fa-bars"></button>
-                    <a href="/search-archive"><button id="" class="fas fa-search"></button></a>
-                    <!--<div  method="get" class="d-flex d-none bg-white align-items-center position-absolute check" style="left: 100px;"  id="openSearchBoxArea">-->
-                    <!--    <input type="text"  class="form-control" id="searchTextInput">-->
-                    <!--    <button id="searchingTextBtn"  class="fas fa-search"></button>-->
-                    <!--    <button type="button" id="openSearchClose" class="fas btn-warning fa-times"></button>-->
-                    <!--</div>-->
+                    <div class="siteDate d-none d-md-block ">
+
+                        <p class="f-12 mt-2 mb-0" id="todayDate">
+                            <script>
+                                let dateText = moment().locale('bn').format('LLLL').toString();
+                                let date = dateText.split(',');
+                                document.write(date[0] + ", " + date[1] + " ইং")
+                            </script>
+
+
+                            <script>
+                                let dateConverted = new buetDateConverter().convert("j F, Y");
+                                document.write(dateConverted + " বঙ্গাব্দ")
+                            </script>
+                        </p>
+
+                    </div>
+
                  </div>
-                <div class="siteDate d-none d-md-block ">
-                    
-                    <p class="f-12 mt-2 mb-0" id="todayDate">
-                        <i class="fas fa-calendar-alt"></i>
-                        <script>
-                            let dateText = moment().locale('bn').format('LLLL').toString();
-                            let date = dateText.split(',');
-                            document.write(date[0] + ", " + date[1] + " ইং")
-                        </script>
-                  
-                  
-                        <script>
-                            let dateConverted = new buetDateConverter().convert("j F, Y");
-                            document.write(dateConverted + " বঙ্গাব্দ")
-                        </script>
-                </p>
-              
-                 </div>
+
             </div>
             <div class="siteLogo">
-                <a href="/"><img  src="{{asset("img/logo.jpg")}}" alt="Agamir Somoy logo"></a>
+{{--                <a href="/"><img  src="{{asset("img/logo.jpg")}}" alt="Agamir Somoy logo"></a>--}}
+                <h1 style="font-size: 56px; font-weight: bolder; color: red">আগামীর সময়</h1>
             </div>
             <div class="siteRight">
-                <div class="siteLanguage text-end f-16">
-                    <a href="https://www.facebook.com/Newsagamirsomoy" class="col"><img height="18px" src="{{asset("img/f.png")}}" alt="site logo"></a>
-                    <a href="https://www.youtube.com/@দৈনিকআগামীরসময়" class="col"><img height="18px" src="{{asset("img/y.png")}}" alt="site logo"></a>
-                    <a href="#" class="col"><img height="18px" src="{{asset("img/t.png")}}" alt="site logo"></a>
-                    <a href="#" class="col"><img height="18px" src="{{asset("img/i.png")}}" alt="site logo"></a>
+                <a href="/search-archive"><button id="" class="fas btn btn-outline-secondary fa-search"></button></a>
 
             </div>
         </div>
     </div>
 </div>
-
 <script>
 
     $('#language').on('change', function(){

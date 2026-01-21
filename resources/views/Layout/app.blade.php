@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>আগামির সময় | যখনই ঘটনা তখনই সংবাদ</title>
+    <title>আগামীর সময় | যখনই ঘটনা তখনই সংবাদ</title>
 {{--    <title>@yield('title')</title>--}}
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -28,8 +28,7 @@
     <link rel="canonical" href="{{ $canonical ?? url()->current() }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100;200;300;400;500;700;800;900&display=swap" rel="stylesheet">
-    {{--    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">--}}
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="{{asset('css/responsive.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{asset('css/fontawesome.css') }}" rel="stylesheet" type="text/css" >
@@ -46,6 +45,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link href="{{asset('css/style.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{asset('css/responsive.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{asset('css/agamir-somoy.css') }}" rel="stylesheet" type="text/css" >
 <style>
 
 #exampleImage { cursor:zoom-in; }
