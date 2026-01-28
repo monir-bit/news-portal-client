@@ -5,6 +5,7 @@ export type NewsListType = {
     url: string;
     title: string;
     ticker: string;
+    image: string;
     shoulder: string;
     sort_description: string;
     live_news: boolean;

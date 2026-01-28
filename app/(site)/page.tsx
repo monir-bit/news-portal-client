@@ -11,7 +11,7 @@ import {HomeInitialNewsType} from "@/types/home-initial-news-type";
 export default async function Home() {
 
     const data: HomeInitialNewsType = await getHomeInitialNews();
-    console.log(data);
+
   return (
     <div className='min-h-screen bg-white dark:bg-slate-950'>
 
@@ -19,10 +19,10 @@ export default async function Home() {
         <div className='grid gap-4'>
             <Header/>
             <CategoryMenuBarServer/>
-            <HomeVideoNews />
-            <HomeLeadNews/>
-            <HomePinNews/>
-            <HomeSecondLeadNews/>
+            <HomeVideoNews newsData={data.trending_video_news} />
+            <HomeLeadNews newsData={data.lead_news}/>
+            <HomePinNews newsData={data.pin_news}/>
+            <HomeSecondLeadNews newsData={data.sub_lead_news}/>
             <Footer/>
         </div>
     </div>
