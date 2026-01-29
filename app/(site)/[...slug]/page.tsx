@@ -53,7 +53,7 @@ export default async function NewsDetails({ params }: PageProps) {
                         </div>
 
                         <div className="prose prose-lg max-w-none text-gray-800">
-                            <HtmlContent content={newsDetails.details.sort_description}/>
+                            <HtmlContent content={newsDetails.details.description}/>
                         </div>
 
                         <div className="mt-8 flex flex-wrap gap-2">
