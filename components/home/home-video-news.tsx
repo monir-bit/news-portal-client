@@ -20,11 +20,11 @@ const HomeVideoNews = ({newsData } : PropTypes) => {
                         key={index}
                         className="group cursor-pointer flex gap-2 border-r border-slate-300 bg-white dark:bg-slate-800/50 transition-all duration-300"
                     >
-                        <div className="relative overflow-hidden  shadow-md hover:shadow-xl transition-all duration-300 shrink-0">
-                            <div className="relative w-16 h-16">
+                        <div className="relative overflow-hidden hover:shadow-xl transition-all duration-300 shrink-0">
+                            <div className="relative">
                                 <Image
-                                    fill
-                                    sizes="128px"
+                                    height={50}
+                                    width={90}
                                     src={news.image}
                                     alt={`Video news ${index + 1}`}
                                     className="object-cover group-hover:scale-105 transition-transform duration-300"

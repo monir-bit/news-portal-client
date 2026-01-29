@@ -18,11 +18,11 @@ const HomeLeadNews = ({newsData}: PropTypes) => {
             {firstNews.map(newsData => {
                 const news = newsData.news;
                 return (
-                    <Link key={news.slug} href={urlGenerator(news.url)} className='col-span-12 md:col-span-6 flex flex-col gap-4 group cursor-pointer'>
+                    <Link prefetch key={news.slug} href={urlGenerator(news.url)} className='col-span-12 md:col-span-6 flex flex-col gap-4 group cursor-pointer'>
                         <div className=" transition-all duration-300">
                             <Image
-                                width={600}
-                                height={400}
+                                width={250}
+                                height={150}
                                 className="w-full h-auto object-cover transition-transform duration-500"
                                 priority
                                 src={news.image}
@@ -44,6 +44,7 @@ const HomeLeadNews = ({newsData}: PropTypes) => {
                 <div className="flex flex-col gap-4">
                     {otherNews.map((news, index) => (
                         <Link
+                            prefetch
                             href={urlGenerator(news?.url)}
                             key={index}
                             className='group cursor-pointer pb-4 border-b border-slate-200 dark:border-slate-700 last:border-b-0 hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-all duration-300 p-3'
@@ -61,10 +62,10 @@ const HomeLeadNews = ({newsData}: PropTypes) => {
                                 </div>
 
                                 <div className="relative overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 shrink-0">
-                                    <div className="relative w-24 h-24">
+                                    <div className="relative">
                                         <Image
-                                            fill
-                                            sizes="96px"
+                                            height={75}
+                                            width={125}
                                             src={news.image}
                                             alt={news.title}
                                             className="object-cover group-hover:scale-110 transition-transform duration-300"

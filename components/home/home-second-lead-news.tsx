@@ -21,8 +21,8 @@ const HomeSecondLeadNews = ({newsData}: PropTypes) => {
                     >
                         <div className=" transition-all duration-300">
                             <Image
-                                width={600}
-                                height={400}
+                                width={150}
+                                height={100}
                                 className="w-full rounded h-auto object-cover transition-transform duration-500"
                                 priority
                                 src={news.image}

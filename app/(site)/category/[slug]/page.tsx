@@ -179,8 +179,8 @@ const CategoryNewsLayout1 = ({news} : {news: NewsListType}) => {
             <Image
                 src={news.image}
                 alt={news.title}
-                height={300}
-                width={500}
+                height={150}
+                width={250}
             />
             <div className="py-2">
                 <h3 className="text-sm font-semibold text-gray-900 group-hover:text-red-600">
@@ -198,8 +198,8 @@ const CategoryNewsLayout2 = ({news} : {news: NewsListType}) => {
             <Image
                 src={news.image}
                 alt={news.title}
-                height={300}
-                width={500}
+                height={150}
+                width={250}
             />
             <div className="p-4">
                 <h3 className="font-semibold text-gray-900 group-hover:text-red-600">
