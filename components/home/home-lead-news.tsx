@@ -21,8 +21,8 @@ const HomeLeadNews = ({newsData}: PropTypes) => {
                     <Link prefetch key={news.slug} href={urlGenerator(news.url)} className='col-span-12 md:col-span-6 flex flex-col gap-4 group cursor-pointer'>
                         <div className=" transition-all duration-300">
                             <Image
-                                width={250}
-                                height={150}
+                                width={500}
+                                height={300}
                                 className="w-full h-auto object-cover transition-transform duration-500"
                                 priority
                                 src={news.image}
@@ -62,10 +62,10 @@ const HomeLeadNews = ({newsData}: PropTypes) => {
                                 </div>
 
                                 <div className="relative overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 shrink-0">
-                                    <div className="relative">
+                                    <div className="relative h-[75px] w-[125px]">
                                         <Image
-                                            height={75}
-                                            width={125}
+                                            height={150}
+                                            width={250}
                                             src={news.image}
                                             alt={news.title}
                                             className="object-cover group-hover:scale-110 transition-transform duration-300"

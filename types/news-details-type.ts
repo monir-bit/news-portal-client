@@ -1,4 +1,5 @@
 import {CategorySummaryType} from "@/types/category-summary-type";
+import {NewsListType} from "@/types/news-list-type";
 
 export type DetailsType = {
     description: string;
@@ -24,3 +25,10 @@ export type NewsDetailsType = {
     details: DetailsType;
     tags: string[];
 };
+
+export type NewsDetailsResponseType = {
+    news_details: NewsDetailsType;
+    related_news: NewsListType[],
+    most_read_news: NewsListType[],
+
+}

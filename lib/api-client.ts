@@ -7,8 +7,8 @@ if (!API_BASE) {
 export async function apiGet<T>(url: string): Promise<T> {
     try {
         const res = await fetch(`${API_BASE}${url}`, {
-            next: { revalidate: 180 },
-            // cache: "no-store",
+            // next: { revalidate: 180 },
+            cache: "no-store",
             headers: {
                 Accept: "application/json",
             },
