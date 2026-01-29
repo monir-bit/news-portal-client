@@ -2,6 +2,10 @@ import React from 'react';
 import Image from "next/image";
 import {IoTimeOutline} from "react-icons/io5";
 import {SectionLayoutPositionedNewsType} from "@/types/section-layout-positioned-news-type";
+import Link from "next/link";
+import {urlGenerator} from "@/lib/utils";
+import {banglaTimeAgo} from "@/lib/bn-date";
+import ShowTime from "@/components/shared/show-time";
 type PropTypes = {
     newsData: SectionLayoutPositionedNewsType[];
 }
@@ -11,7 +15,10 @@ const HomeSecondLeadNews = ({newsData}: PropTypes) => {
             {newsData.map((item, index) => {
                 const news = item.news;
                 return (
-                    <div key={index} className='flex border border-slate-200 p-3 flex-col gap-2 group cursor-pointer'>
+                    <Link
+                        href={urlGenerator(news?.url)}
+                        key={index} className='flex border border-slate-200 p-3 flex-col gap-2 group cursor-pointer'
+                    >
                         <div className=" transition-all duration-300">
                             <Image
                                 width={600}
@@ -25,11 +32,8 @@ const HomeSecondLeadNews = ({newsData}: PropTypes) => {
                         <h1 className=' line-clamp-2 text-lg font-bold text-slate-800 dark:text-slate-100 group-hover:text-red-600 transition-colors leading-snug'>
                             {news.title}
                         </h1>
-                        <p className='text-sm text-slate-500 dark:text-slate-400 flex items-center gap-1'>
-                            <IoTimeOutline className="text-base" />
-                            <span>৩ ঘন্টা আগে</span>
-                        </p>
-                    </div>
+                        <ShowTime time={banglaTimeAgo(news.date)}/>
+                    </Link>
                 )
             })}
         </div>

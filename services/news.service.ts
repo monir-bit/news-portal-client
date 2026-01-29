@@ -1,35 +1,21 @@
 import { fetchWithCache } from '@/lib/fetcher';
 import { cacheKey } from '@/utils/cache-key';
-import { News } from '@/types/news';
+import {NewsDetailsType} from "@/types/news-details-type";
+import {NewsByCategoryType} from "@/types/news-by-category-type";
 
-export function getLeadNews() {
-    return fetchWithCache<News[]>(
-        cacheKey.leadNews,
-        '/news/lead',
-        120
-    );
-}
-
-export function getBreakingNews() {
-    return fetchWithCache<News[]>(
-        cacheKey.breakingNews,
-        '/news/breaking',
-        30
-    );
-}
 
 export function getNewsDetails(slug: string) {
-    return fetchWithCache<News>(
+    return fetchWithCache<NewsDetailsType>(
         cacheKey.newsBySlug(slug),
-        `/news/${slug}`,
+        `/news-details/${slug}`,
         300
     );
 }
 
 export function getNewsByCategory(slug: string) {
-    return fetchWithCache<News[]>(
+    return fetchWithCache<NewsByCategoryType>(
         cacheKey.newsByCategory(slug),
-        `/categories/${slug}/news`,
+        `/news-by-category/`+slug,
         180
     );
 }

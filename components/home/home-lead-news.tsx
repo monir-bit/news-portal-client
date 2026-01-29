@@ -1,41 +1,50 @@
 import React from 'react';
 import Image from "next/image";
-import { IoTimeOutline } from "react-icons/io5";
 import {SectionLayoutPositionedNewsType} from "@/types/section-layout-positioned-news-type";
+import Link from "next/link";
+import {urlGenerator} from "@/lib/utils";
+import {banglaTimeAgo} from "@/lib/bn-date";
+import ShowTime from "@/components/shared/show-time";
+import HtmlContent from "@/components/shared/html-content";
 type PropTypes = {
     newsData: SectionLayoutPositionedNewsType[];
 }
 const HomeLeadNews = ({newsData}: PropTypes) => {
-    const firstNews = newsData.filter(news => news.position === 1)[0]?.news;
+    const firstNews = newsData.filter(news => news.position === 1).slice(0,1);
     const otherNews = newsData.filter(news => news.position !== 1).map(item => item.news);
+
     return (
         <div className='grid grid-cols-1 md:grid-cols-12 gap-6 mb-8'>
-            <div className='col-span-12 md:col-span-6 flex flex-col gap-4 group cursor-pointer'>
-                <div className=" transition-all duration-300">
-                    <Image
-                        width={600}
-                        height={400}
-                        className="w-full h-auto object-cover transition-transform duration-500"
-                        priority
-                        src={firstNews.image}
-                        alt={''}/>
-                </div>
+            {firstNews.map(newsData => {
+                const news = newsData.news;
+                return (
+                    <Link key={news.slug} href={urlGenerator(news.url)} className='col-span-12 md:col-span-6 flex flex-col gap-4 group cursor-pointer'>
+                        <div className=" transition-all duration-300">
+                            <Image
+                                width={600}
+                                height={400}
+                                className="w-full h-auto object-cover transition-transform duration-500"
+                                priority
+                                src={news.image}
+                                alt={''}/>
+                        </div>
 
-                <h1 className=' line-clamp-2 text-2xl md:text-2xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-red-600 transition-colors leading-snug'>
-                    {firstNews.title}
-                </h1>
-                <p className='line-clamp-3 text-slate-600 dark:text-slate-400 leading-relaxed text-base'>
-                    {firstNews?.sort_description}
-                </p>
-                <p className='text-sm text-slate-500 dark:text-slate-400 flex items-center gap-1'>
-                    <IoTimeOutline className="text-base" />
-                    <span>৩ ঘন্টা আগে</span>
-                </p>
-            </div>
+                        <h1 className=' line-clamp-2 text-2xl md:text-2xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-red-600 transition-colors leading-snug'>
+                            {news.title}
+                        </h1>
+                        <p className='line-clamp-3 text-slate-600 dark:text-slate-400 leading-relaxed text-base'>
+                            {news?.sort_description}
+                        </p>
+                        <ShowTime time={banglaTimeAgo(news.date)}/>
+                    </Link>
+                )
+            })}
+
             <div className='col-span-12 md:col-span-3'>
                 <div className="flex flex-col gap-4">
                     {otherNews.map((news, index) => (
-                        <div
+                        <Link
+                            href={urlGenerator(news?.url)}
                             key={index}
                             className='group cursor-pointer pb-4 border-b border-slate-200 dark:border-slate-700 last:border-b-0 hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-all duration-300 p-3'
                         >
@@ -45,13 +54,10 @@ const HomeLeadNews = ({newsData}: PropTypes) => {
 
                             <div className="flex gap-3">
                                 <div className="flex-1">
-                                    <p className='line-clamp-2 text-sm text-slate-600 dark:text-slate-400 leading-relaxed'>
-                                        {news?.sort_description}
-                                    </p>
-                                    <p className='text-xs text-slate-500 dark:text-slate-400 mt-2 flex items-center gap-1'>
-                                        <IoTimeOutline className="text-sm" />
-                                        <span>৩ ঘন্টা আগে</span>
-                                    </p>
+                                    <div className='line-clamp-2 text-sm text-slate-600 dark:text-slate-400 leading-relaxed'>
+                                        <HtmlContent content={news.sort_description}/>
+                                    </div>
+                                    <ShowTime time={banglaTimeAgo(news.date)}/>
                                 </div>
 
                                 <div className="relative overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 shrink-0">
@@ -66,7 +72,7 @@ const HomeLeadNews = ({newsData}: PropTypes) => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

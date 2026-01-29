@@ -2,6 +2,8 @@ import React from 'react';
 import Image from "next/image";
 import { FaPlay } from "react-icons/fa6";
 import {SectionLayoutPositionedNewsType} from "@/types/section-layout-positioned-news-type";
+import Link from "next/link";
+import {urlGenerator} from "@/lib/utils";
 
 type PropTypes = {
     newsData: SectionLayoutPositionedNewsType[];
@@ -13,7 +15,8 @@ const HomeVideoNews = ({newsData } : PropTypes) => {
             {newsData.map((item, index) => {
                 const news = item.news;
                 return (
-                    <div
+                    <Link
+                        href={urlGenerator(news?.url)}
                         key={index}
                         className="group cursor-pointer flex gap-2 border-r border-slate-300 bg-white dark:bg-slate-800/50 transition-all duration-300"
                     >
@@ -35,7 +38,7 @@ const HomeVideoNews = ({newsData } : PropTypes) => {
                                 {news.title}
                             </h3>
                         </div>
-                    </div>
+                    </Link>
                 )
             })}
         </div>

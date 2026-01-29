@@ -3,12 +3,13 @@ import {formatBanglaDate} from "@/lib/bn-date";
 import {BiSearch} from "react-icons/bi";
 import logo from '@/assets/images/logo.png';
 import Image from "next/image";
+import Link from "next/link";
 
 
 const Header = () => {
     const date = new Date();
     return (
-        <header className='border-b border-slate-200 dark:border-slate-700'>
+        <Link href={'/'} className='border-b border-slate-200 dark:border-slate-700'>
             <div className='flex py-5 justify-between items-center'>
                 <time className='text-base text-slate-600 dark:text-slate-400 font-medium'>
                     {formatBanglaDate(date)}
@@ -20,7 +21,7 @@ const Header = () => {
                     <BiSearch className='text-xl' />
                 </button>
             </div>
-        </header>
+        </Link>
     );
 };
 

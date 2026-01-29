@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from "next/image";
 import {SectionLayoutPositionedNewsType} from "@/types/section-layout-positioned-news-type";
+import Link from "next/link";
+import {urlGenerator} from "@/lib/utils";
 type PropTypes = {
     newsData: SectionLayoutPositionedNewsType[];
 }
@@ -10,7 +12,8 @@ const HomePinNews = ({newsData}: PropTypes) => {
             {newsData.map((item, index) =>{
                 const news = item.news;
                 return (
-                    <div
+                    <Link
+                        href={urlGenerator(news?.url)}
                         key={index}
                         className="group cursor-pointer flex border p-2 border-slate-100 bg-white dark:bg-slate-800/50 transition-all duration-300"
                     >
@@ -32,7 +35,7 @@ const HomePinNews = ({newsData}: PropTypes) => {
                                 {news.title}
                             </h3>
                         </div>
-                    </div>
+                    </Link>
                 )
             })}
         </div>
